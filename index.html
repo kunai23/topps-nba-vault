@@ -11,318 +11,321 @@
 :root{
   --bg:#f5f4f0;--surface:#fff;--surface2:#f8f7f4;--border:#e5e3dc;
   --text:#1a1916;--muted:#8a8880;--muted2:#b8b6b0;
-  --accent:#d4a017;--accent-dk:#a87c0d;
+  --accent:#c8960a;--accent-dk:#a07808;
   --green:#1a7a4a;--red:#b83232;--blue:#1a4fa0;
-  --psa10:#ff6b35;--psa9:#4a9eff;--raw:#888;
+  --psa10:#e05820;--psa9:#1a4fa0;
 }
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:13px}
 
-/* ── HEADER ── */
-.header{background:var(--text);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:52px;position:sticky;top:0;z-index:100}
-.logo{display:flex;align-items:center;gap:10px}
-.logo-tc{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:4px;background:linear-gradient(135deg,#c0a060,#f0d890,#a07840,#e0c070);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.logo-sub{font-size:10px;letter-spacing:2px;color:#888;text-transform:uppercase}
-.header-nav{display:flex;gap:2px}
-.hnav-item{padding:6px 14px;font-size:12px;font-weight:500;color:#aaa;cursor:pointer;border-radius:5px;transition:.15s;text-transform:uppercase;letter-spacing:.5px}
-.hnav-item:hover,.hnav-item.on{background:rgba(255,255,255,.1);color:#fff}
-.header-right{display:flex;align-items:center;gap:16px}
-.hstat-val{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--accent)}
-.hstat-lbl{font-size:9px;color:#666;letter-spacing:1px;text-transform:uppercase;margin-left:4px}
+/* HEADER */
+.header{background:#111;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:48px;position:sticky;top:0;z-index:100}
+.logo-tc{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:4px;background:linear-gradient(135deg,#c0a060,#f0d890,#a07840,#e0c070);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo-sub{font-size:9px;letter-spacing:2px;color:#666;text-transform:uppercase;margin-left:8px}
+.hnav{display:flex;gap:1px}
+.hn{padding:5px 12px;font-size:11px;font-weight:500;color:#888;cursor:pointer;border-radius:4px;transition:.12s;text-transform:uppercase;letter-spacing:.5px}
+.hn:hover,.hn.on{background:rgba(255,255,255,.1);color:#fff}
+.hstats{display:flex;gap:14px;align-items:center}
+.hs{font-size:10px;color:#666}
+.hs b{font-family:'Bebas Neue',sans-serif;font-size:15px;color:var(--accent);margin-right:3px}
 
-/* ── TOOLBAR ── */
-.toolbar{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 28px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.search-wrap{position:relative;flex:1;min-width:220px;max-width:360px}
-.search-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--muted2)}
-.search-wrap input{width:100%;border:1px solid var(--border);background:var(--surface2);color:var(--text);padding:7px 10px 7px 32px;border-radius:6px;font-size:13px;outline:none;font-family:'Inter',sans-serif;transition:.2s}
-.search-wrap input:focus{border-color:var(--accent);background:#fff}
-.search-wrap input::placeholder{color:var(--muted2)}
-.filter-sel{border:1px solid var(--border);background:var(--surface2);color:var(--text);padding:7px 26px 7px 10px;border-radius:6px;font-size:12px;outline:none;cursor:pointer;font-family:'Inter',sans-serif;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%23aaa' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;transition:.2s}
-.filter-sel:focus{border-color:var(--accent)}
-.pill-row{display:flex;gap:5px;flex-wrap:wrap}
-.pill{border:1px solid var(--border);background:var(--surface2);color:var(--muted);padding:5px 12px;border-radius:20px;font-size:11px;cursor:pointer;transition:.15s;font-family:'Inter',sans-serif;font-weight:500}
+/* TOOLBAR */
+.toolbar{background:var(--surface);border-bottom:1px solid var(--border);padding:8px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.sw{position:relative;flex:1;min-width:200px;max-width:320px}
+.sw svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:13px;height:13px;color:var(--muted2);pointer-events:none}
+.sw input{width:100%;border:1px solid var(--border);background:var(--surface2);color:var(--text);padding:6px 8px 6px 28px;border-radius:5px;font-size:12px;outline:none;font-family:'Inter',sans-serif}
+.sw input:focus{border-color:var(--accent)}
+.sw input::placeholder{color:var(--muted2)}
+.pill-row{display:flex;gap:4px;flex-wrap:wrap}
+.pill{border:1px solid var(--border);background:var(--surface2);color:var(--muted);padding:4px 10px;border-radius:16px;font-size:11px;cursor:pointer;transition:.12s;font-weight:500;white-space:nowrap}
 .pill:hover{border-color:var(--accent);color:var(--accent-dk)}
 .pill.on{background:var(--accent);border-color:var(--accent);color:#fff}
-.toolbar-right{margin-left:auto;display:flex;gap:6px;align-items:center}
-.count-badge{background:var(--surface2);border:1px solid var(--border);padding:5px 12px;border-radius:6px;font-size:11px;color:var(--muted);font-weight:500}
-.count-badge b{color:var(--text)}
+.fsel{border:1px solid var(--border);background:var(--surface2);color:var(--text);padding:5px 22px 5px 8px;border-radius:5px;font-size:11px;outline:none;cursor:pointer;font-family:'Inter',sans-serif;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' fill='%23aaa' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 6px center}
+.fsel:focus{border-color:var(--accent)}
+.tr{margin-left:auto;display:flex;gap:6px;align-items:center}
+.cbadge{background:var(--surface2);border:1px solid var(--border);padding:4px 10px;border-radius:5px;font-size:11px;color:var(--muted);white-space:nowrap}
+.cbadge b{color:var(--text)}
 
-/* ── LAYOUT ── */
-.layout{display:flex}
-.sidebar{width:220px;flex-shrink:0;border-right:1px solid var(--border);background:var(--surface);min-height:calc(100vh - 104px)}
-.sb-section{border-bottom:1px solid var(--border);padding:12px 0}
-.sb-title{padding:4px 16px 8px;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted2)}
-.sb-item{padding:6px 16px;font-size:12.5px;cursor:pointer;transition:.12s;display:flex;align-items:center;justify-content:space-between;color:var(--muted)}
+/* LAYOUT */
+.layout{display:flex;height:calc(100vh - 100px)}
+.sidebar{width:196px;flex-shrink:0;border-right:1px solid var(--border);background:var(--surface);overflow-y:auto}
+.sb-sec{border-bottom:1px solid var(--border);padding:10px 0}
+.sb-lbl{padding:3px 12px 6px;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted2)}
+.sb-item{padding:5px 12px;cursor:pointer;transition:.1s;display:flex;align-items:center;justify-content:space-between;color:var(--muted)}
 .sb-item:hover{background:var(--surface2);color:var(--text)}
-.sb-item.on{color:var(--accent-dk);background:#fdf8ee;font-weight:500}
-.sb-item-l{display:flex;align-items:center;gap:8px}
-.sb-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.sb-cnt{font-size:10px;background:var(--surface2);border:1px solid var(--border);padding:1px 6px;border-radius:8px;color:var(--muted2)}
-.sb-item.on .sb-cnt{background:#fdf8ee;color:var(--accent-dk)}
+.sb-item.on{color:var(--accent-dk);background:#fffbee;font-weight:500}
+.sb-il{display:flex;align-items:center;gap:7px;font-size:12px}
+.sdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.scnt{font-size:10px;background:var(--surface2);border:1px solid var(--border);padding:1px 5px;border-radius:6px;color:var(--muted2)}
+.sb-item.on .scnt{background:#fffbee;color:var(--accent-dk)}
 
-/* ── MAIN TABLE ── */
-.content{flex:1;padding:20px 24px;overflow-x:auto}
-.section-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.section-title{font-size:13px;font-weight:600;color:var(--text)}
-.section-sub{font-size:11px;color:var(--muted)}
+/* TABLE AREA */
+.tarea{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.tscroll{flex:1;overflow-y:auto}
 
-/* Table */
-.card-table{width:100%;border-collapse:collapse;font-size:12.5px}
-.card-table thead th{background:var(--surface2);border:1px solid var(--border);padding:8px 12px;text-align:left;font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);position:sticky;top:52px;z-index:5}
-.card-table thead th.price-col{text-align:right}
-.card-table tbody tr{border-bottom:1px solid var(--border);transition:.12s;cursor:pointer}
-.card-table tbody tr:hover{background:#fdf8ee}
-.card-table td{padding:9px 12px;vertical-align:middle}
-.card-table td.price-col{text-align:right;font-variant-numeric:tabular-nums}
+/* Stats */
+.sbar{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border)}
+.sc{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:7px 10px}
+.sc-v{font-size:17px;font-weight:700;font-family:'Bebas Neue',sans-serif;letter-spacing:.5px}
+.sc-l{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:1px}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead th{background:var(--surface2);border-bottom:1px solid var(--border);padding:7px 10px;text-align:left;font-size:9px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);position:sticky;top:0;z-index:5;white-space:nowrap;cursor:pointer;user-select:none}
+thead th:hover{color:var(--text)}
+thead th.sorted{color:var(--accent-dk)}
+thead th.r{text-align:right}
+tbody tr{border-bottom:1px solid var(--border);cursor:pointer;transition:.1s}
+tbody tr:hover{background:#fffbee}
+td{padding:7px 10px;vertical-align:middle}
+td.r{text-align:right;font-variant-numeric:tabular-nums}
 
 /* Player cell */
-.player-cell{display:flex;align-items:center;gap:10px}
-.player-thumb{width:38px;height:38px;border-radius:6px;overflow:hidden;background:linear-gradient(135deg,#e8e6e0,#d0cec8);flex-shrink:0;position:relative}
-.player-thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
-.player-info{}
-.player-name{font-weight:600;font-size:13px;color:var(--text)}
-.player-meta{font-size:10px;color:var(--muted);margin-top:1px}
+.pc{display:flex;align-items:center;gap:8px}
+.pthumb{width:34px;height:34px;border-radius:5px;overflow:hidden;background:linear-gradient(135deg,#e8e6e0,#d0cec8);flex-shrink:0}
+.pthumb img{width:100%;height:100%;object-fit:cover;object-position:top}
+.pname{font-weight:600;font-size:12.5px;white-space:nowrap}
+.pmeta{font-size:10px;color:var(--muted);margin-top:1px}
 
-/* Variation cell */
-.var-name{font-weight:500;color:var(--text)}
-.var-print{font-size:10px;color:var(--muted);margin-left:4px}
-.var-badge{display:inline-flex;align-items:center;padding:2px 7px;border-radius:3px;font-size:9px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-left:6px}
-.vb-base{background:#f0eff8;color:#6060a0;border:1px solid #d0d0e8}
+/* Badges */
+.vbadge{display:inline-flex;align-items:center;padding:1px 6px;border-radius:3px;font-size:9px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;margin-left:5px;vertical-align:middle}
+.vb-base{background:#f0eff8;color:#5050a0}
 .vb-rc{background:#e8f8f0;color:#1a7a4a;border:1px solid #b0e0c8}
-.vb-refractor{background:#e8f0ff;color:#1a4fa0;border:1px solid #b0c8ff}
-.vb-auto{background:#fff0e8;color:#a04010;border:1px solid #f0c8a0}
-.vb-sp{background:#f0e8ff;color:#6020a0;border:1px solid #c8a0f0}
-.vb-super{background:#fff8e0;color:#806000;border:1px solid #e8d060}
+.vb-ref{background:#e8f0ff;color:#1a4fa0}
+.vb-auto{background:#fff0e8;color:#a04010}
+.vb-sp{background:#f0e8ff;color:#6020a0}
+.pr{display:inline-block;background:#222;color:#fff;font-size:8px;font-weight:700;padding:1px 4px;border-radius:2px;letter-spacing:.5px;margin-left:3px}
+.pr.gold{background:#b8860b}
+.pr.red{background:#8b0000}
+.pr.super{background:linear-gradient(90deg,#b8860b,#ffd700,#b8860b);color:#000}
 
-/* Price cells */
-.price-raw{color:var(--text);font-weight:500}
-.price-psa9{color:var(--blue);font-weight:600}
-.price-psa10{color:var(--psa10);font-weight:700}
-.price-empty{color:var(--muted2)}
-.price-up{color:var(--green)}
-.price-down{color:var(--red)}
-.price-chg{font-size:10px;font-weight:600}
+/* Prices */
+.p-raw{color:var(--text);font-weight:500}
+.p-9{color:var(--psa9);font-weight:600}
+.p-10{color:var(--psa10);font-weight:700}
+.p-nil{color:var(--muted2)}
+.chg-up{color:var(--green);font-size:10px;font-weight:600}
+.chg-dn{color:var(--red);font-size:10px;font-weight:600}
+.ebay-a{display:inline-flex;align-items:center;gap:3px;font-size:10px;color:var(--blue);text-decoration:none;padding:2px 7px;border:1px solid #b0c8ff;border-radius:3px;white-space:nowrap;transition:.12s}
+.ebay-a:hover{background:#e8f0ff}
 
-/* Print run badge */
-.print-run{display:inline-block;background:var(--text);color:#fff;font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:.5px}
-.print-run.gold{background:#b8860b}
-.print-run.red{background:#8b0000}
-.print-run.super{background:linear-gradient(90deg,#b8860b,#ffd700,#b8860b);color:#000}
-
-/* eBay link */
-.ebay-link{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:var(--blue);text-decoration:none;padding:3px 8px;border:1px solid #b0c8ff;border-radius:4px;transition:.15s;white-space:nowrap}
-.ebay-link:hover{background:#e8f0ff}
-
-/* Set tabs */
-.set-tabs{display:flex;gap:2px;margin-bottom:18px;border-bottom:2px solid var(--border);padding-bottom:0}
-.set-tab{padding:8px 16px;font-size:12px;font-weight:500;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-2px;transition:.15s}
-.set-tab:hover{color:var(--text)}
-.set-tab.on{color:var(--accent-dk);border-bottom-color:var(--accent);font-weight:600}
+/* Pagination */
+.pager{display:flex;align-items:center;justify-content:center;gap:5px;padding:10px;background:var(--surface);border-top:1px solid var(--border);flex-shrink:0}
+.pager button{border:1px solid var(--border);background:var(--surface2);color:var(--text);padding:4px 10px;border-radius:4px;font-size:11px;cursor:pointer;font-family:'Inter',sans-serif;transition:.12s}
+.pager button:hover{border-color:var(--accent);color:var(--accent-dk)}
+.pager button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.pager button:disabled{opacity:.4;cursor:default}
+.pager-info{font-size:11px;color:var(--muted);margin:0 8px}
 
 /* Grade legend */
-.grade-legend{display:flex;gap:16px;align-items:center;margin-bottom:14px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:11px}
-.gl-item{display:flex;align-items:center;gap:5px}
-.gl-dot{width:8px;height:8px;border-radius:50%}
-
-/* Stats bar */
-.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
-.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 14px}
-.stat-card-val{font-size:20px;font-weight:700;font-family:'Bebas Neue',sans-serif;letter-spacing:.5px}
-.stat-card-lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:1px}
+.gl{display:flex;gap:14px;align-items:center;padding:6px 16px;background:#fffbee;border-bottom:1px solid #ede8d8;font-size:10px;flex-shrink:0}
+.gli{display:flex;align-items:center;gap:4px}
+.gld{width:7px;height:7px;border-radius:50%}
 
 /* Modal */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.2s}
-.modal-overlay.open{opacity:1;pointer-events:all}
-.modal{background:var(--surface);border:1px solid var(--border);border-radius:14px;width:600px;max-width:95vw;max-height:90vh;overflow-y:auto;transform:translateY(16px);transition:.2s;box-shadow:0 20px 60px rgba(0,0,0,.2)}
-.modal-overlay.open .modal{transform:translateY(0)}
-.modal-head{padding:18px 20px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start}
-.modal-close{background:var(--surface2);border:1px solid var(--border);color:var(--muted);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
-.modal-body{padding:20px}
-.modal-card-preview{display:flex;gap:18px;margin-bottom:20px}
-.modal-card-art{width:120px;height:168px;border-radius:8px;overflow:hidden;position:relative;flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.15);border:1px solid var(--border)}
-.modal-card-art img{width:100%;height:100%;object-fit:cover;object-position:top}
-.modal-card-bg{position:absolute;inset:0}
-.modal-card-overlay{position:absolute;bottom:0;left:0;right:0;padding:8px;background:linear-gradient(0deg,rgba(0,0,0,.8) 0%,transparent 100%)}
-.modal-card-name{font-family:'Bebas Neue',sans-serif;font-size:16px;color:#fff;letter-spacing:1px}
-.modal-card-team{font-size:9px;color:rgba(255,255,255,.6);letter-spacing:1.5px;text-transform:uppercase}
-.grade-table{width:100%;border-collapse:collapse;margin-bottom:16px}
-.grade-table th{background:var(--surface2);border:1px solid var(--border);padding:8px 12px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);text-align:center}
-.grade-table td{border:1px solid var(--border);padding:10px 12px;text-align:center;font-size:14px;font-weight:600}
-.grade-table td.grade-raw{color:var(--text)}
-.grade-table td.grade-8{color:#888}
-.grade-table td.grade-9{color:var(--blue)}
-.grade-table td.grade-10{color:var(--psa10);font-size:18px}
-.modal-actions{display:flex;gap:8px}
-.btn-primary{flex:1;background:var(--text);color:#fff;border:none;padding:10px;border-radius:7px;font-weight:600;font-size:12px;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;transition:.15s;font-family:'Inter',sans-serif}
-.btn-primary:hover{background:#333}
-.btn-secondary{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:7px;font-size:12px;cursor:pointer;font-family:'Inter',sans-serif;transition:.15s}
-.btn-secondary:hover{border-color:var(--accent);color:var(--accent-dk)}
-
-/* Shimmer for foil cards */
-.foil-overlay{position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.4) 50%,transparent 70%);background-size:200%;animation:shimmer 2.5s ease-in-out infinite}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.18s}
+.mo.open{opacity:1;pointer-events:all}
+.mbox{background:var(--surface);border:1px solid var(--border);border-radius:12px;width:580px;max-width:95vw;max-height:90vh;overflow-y:auto;transform:translateY(14px);transition:.18s;box-shadow:0 16px 48px rgba(0,0,0,.2)}
+.mo.open .mbox{transform:translateY(0)}
+.mh{padding:16px 18px 12px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start}
+.mx{background:var(--surface2);border:1px solid var(--border);color:var(--muted);width:26px;height:26px;border-radius:5px;cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center}
+.mb{padding:18px}
+.mrow{display:flex;gap:16px;margin-bottom:18px}
+.mart{width:115px;height:161px;border-radius:8px;overflow:hidden;position:relative;flex-shrink:0;box-shadow:0 3px 16px rgba(0,0,0,.15);border:1px solid var(--border)}
+.mart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:1}
+.mart-bg{position:absolute;inset:0}
+.mart-ov{position:absolute;bottom:0;left:0;right:0;padding:6px;background:linear-gradient(0deg,rgba(0,0,0,.8),transparent);z-index:2}
+.mart-name{font-family:'Bebas Neue',sans-serif;font-size:14px;color:#fff;letter-spacing:1px}
+.mart-team{font-size:8px;color:rgba(255,255,255,.6);letter-spacing:1.5px;text-transform:uppercase}
+.foil{position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);background-size:200%;animation:shi 2.5s ease-in-out infinite;z-index:3}
+@keyframes shi{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.minfo{flex:1}
+.mplayer{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;line-height:1;margin-bottom:2px}
+.mmeta{font-size:11px;color:var(--muted);margin-bottom:12px;display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.mpill{background:var(--surface2);border:1px solid var(--border);padding:2px 7px;border-radius:3px;font-size:9px}
+.gtable{width:100%;border-collapse:collapse;margin-bottom:14px}
+.gtable th{background:var(--surface2);border:1px solid var(--border);padding:6px 10px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);text-align:center}
+.gtable td{border:1px solid var(--border);padding:9px 10px;text-align:center;font-size:15px;font-weight:700}
+.gd-raw{color:var(--text)}
+.gd-8{color:#888}
+.gd-9{color:var(--psa9)}
+.gd-10{color:var(--psa10);font-size:20px}
+.msgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:14px}
+.msitem{background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:7px 9px}
+.ms-l{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
+.ms-v{font-size:12px;font-weight:600}
+.macts{display:flex;gap:7px}
+.btn-eb{flex:1;background:#111;color:#fff;border:none;padding:9px;border-radius:7px;font-weight:600;font-size:12px;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:5px;font-family:'Inter',sans-serif;transition:.12s}
+.btn-eb:hover{background:#333}
+.btn-wl{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:9px 13px;border-radius:7px;font-size:12px;cursor:pointer;font-family:'Inter',sans-serif;transition:.12s}
+.btn-wl:hover{border-color:var(--accent);color:var(--accent-dk)}
 ::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-@media(max-width:768px){.sidebar{display:none}.stats-bar{grid-template-columns:1fr 1fr}.set-tabs{overflow-x:auto}}
+@media(max-width:768px){.sidebar{display:none}.sbar{grid-template-columns:1fr 1fr 1fr}.gl{display:none}}
 </style>
 </head>
 <body>
 
 <div class="header">
-  <div class="logo">
+  <div style="display:flex;align-items:center">
     <div class="logo-tc">TOPPS CHROME NBA</div>
-    <div class="logo-sub">Price Guide</div>
+    <div class="logo-sub">Vault</div>
+    <div class="hnav" style="margin-left:20px">
+      <div class="hn on" data-s="all">Tout</div>
+      <div class="hn" data-s="rookies">Rookies</div>
+      <div class="hn" data-s="autos">Autos</div>
+      <div class="hn" data-s="hot">🔥 Hot</div>
+    </div>
   </div>
-  <div class="header-nav">
-    <div class="hnav-item on" onclick="setSection('all')">Toutes les cartes</div>
-    <div class="hnav-item" onclick="setSection('rookies')">Rookies</div>
-    <div class="hnav-item" onclick="setSection('autos')">Autographes</div>
-    <div class="hnav-item" onclick="setSection('top')">Top valeur</div>
-  </div>
-  <div class="header-right">
-    <span class="hstat-val" id="hv-total">—</span><span class="hstat-lbl">variations</span>
-    <span class="hstat-val" id="hv-sets">3</span><span class="hstat-lbl">sets</span>
+  <div class="hstats">
+    <div class="hs"><b id="hv-c">—</b>variations</div>
+    <div class="hs"><b id="hv-p">—</b>joueurs</div>
   </div>
 </div>
 
 <div class="toolbar">
-  <div class="search-wrap">
+  <div class="sw">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" id="q" placeholder="Rechercher joueur, variation, numéro…">
+    <input type="text" id="q" placeholder="Joueur, variation, équipe…">
   </div>
-  <div class="pill-row" id="year-pills">
+  <div class="pill-row" id="yp">
     <div class="pill on" data-y="">Toutes années</div>
+    <div class="pill" data-y="2025">2025-26</div>
     <div class="pill" data-y="2024">2024-25</div>
     <div class="pill" data-y="2023">2023-24</div>
     <div class="pill" data-y="2022">2022-23</div>
   </div>
-  <div class="pill-row" id="type-pills">
+  <div class="pill-row" id="tp">
     <div class="pill on" data-t="">Tous types</div>
     <div class="pill" data-t="base">Base</div>
     <div class="pill" data-t="rc">RC</div>
     <div class="pill" data-t="refractor">Refractor</div>
     <div class="pill" data-t="auto">Auto</div>
-    <div class="pill" data-t="sp">SP</div>
   </div>
-  <div class="toolbar-right">
-    <filter-sel class="filter-sel" id="sort-sel">
-    <select class="filter-sel" id="sort-sel">
+  <div class="tr">
+    <select class="fsel" id="ss">
       <option value="pd">Prix brut ↓</option>
       <option value="pa">Prix brut ↑</option>
-      <option value="p10d">PSA 10 ↓</option>
-      <option value="p10a">PSA 10 ↑</option>
+      <option value="p10">PSA 10 ↓</option>
       <option value="na">Nom A-Z</option>
-      <option value="num">Numéro #</option>
+      <option value="num">N° carte</option>
+      <option value="chg">Variation ↓</option>
     </select>
-    <div class="count-badge"><b id="cc">—</b> cartes</div>
+    <div class="cbadge">Affichage : <b id="cc">—</b> / <b id="ct">—</b></div>
   </div>
 </div>
 
 <div class="layout">
   <div class="sidebar">
-    <div class="sb-section">
-      <div class="sb-title">Joueurs</div>
-      <div id="player-nav"></div>
+    <div class="sb-sec">
+      <div class="sb-lbl">Joueurs</div>
+      <div id="pnav"></div>
     </div>
-    <div class="sb-section">
-      <div class="sb-title">Équipes</div>
-      <div id="team-nav"></div>
+    <div class="sb-sec">
+      <div class="sb-lbl">Équipes</div>
+      <div id="tnav"></div>
     </div>
-    <div class="sb-section">
-      <div class="sb-title">Variations</div>
-      <div id="var-nav">
-        <div class="sb-item on" data-v=""><div class="sb-item-l">Toutes</div></div>
-        <div class="sb-item" data-v="Base"><div class="sb-item-l">Base</div></div>
-        <div class="sb-item" data-v="Refractor"><div class="sb-item-l">Refractor</div></div>
-        <div class="sb-item" data-v="Gold Refractor"><div class="sb-item-l">Gold Refractor /50</div></div>
-        <div class="sb-item" data-v="Red Refractor"><div class="sb-item-l">Red Refractor /5</div></div>
-        <div class="sb-item" data-v="SuperFractor"><div class="sb-item-l">SuperFractor 1/1</div></div>
-        <div class="sb-item" data-v="Prism Refractor"><div class="sb-item-l">Prism Refractor</div></div>
-        <div class="sb-item" data-v="FrozenFractor"><div class="sb-item-l">FrozenFractor</div></div>
-        <div class="sb-item" data-v="Auto"><div class="sb-item-l">Autographe</div></div>
+    <div class="sb-sec">
+      <div class="sb-lbl">Parallèles</div>
+      <div id="vnav">
+        <div class="sb-item on" data-v=""><div class="sb-il">Tous parallèles</div></div>
+        <div class="sb-item" data-v="Base"><div class="sb-il">Base</div></div>
+        <div class="sb-item" data-v="Refractor"><div class="sb-il">Refractor</div></div>
+        <div class="sb-item" data-v="Prism"><div class="sb-il">Prism Refractor</div></div>
+        <div class="sb-item" data-v="X-Fractor"><div class="sb-il">X-Fractor</div></div>
+        <div class="sb-item" data-v="Yellow"><div class="sb-il">Yellow /275</div></div>
+        <div class="sb-item" data-v="Aqua"><div class="sb-il">Aqua /199</div></div>
+        <div class="sb-item" data-v="Blue Refractor"><div class="sb-il">Blue /150</div></div>
+        <div class="sb-item" data-v="Green Refractor"><div class="sb-il">Green /99</div></div>
+        <div class="sb-item" data-v="Purple Refractor"><div class="sb-il">Purple /75</div></div>
+        <div class="sb-item" data-v="Gold Refractor"><div class="sb-il">Gold /50</div></div>
+        <div class="sb-item" data-v="Orange Refractor"><div class="sb-il">Orange /25</div></div>
+        <div class="sb-item" data-v="Black Refractor"><div class="sb-il">Black /10</div></div>
+        <div class="sb-item" data-v="Red Refractor"><div class="sb-il">Red /5</div></div>
+        <div class="sb-item" data-v="FrozenFractor"><div class="sb-il">FrozenFractor /5</div></div>
+        <div class="sb-item" data-v="SuperFractor"><div class="sb-il">SuperFractor 1/1</div></div>
+        <div class="sb-item" data-v="Auto"><div class="sb-il">Autographe</div></div>
       </div>
     </div>
   </div>
 
-  <div class="content">
-    <div class="stats-bar" id="stats-bar">
-      <div class="stat-card"><div class="stat-card-val" id="s-count">—</div><div class="stat-card-lbl">Variations</div></div>
-      <div class="stat-card"><div class="stat-card-val" id="s-avg">—</div><div class="stat-card-lbl">Prix brut moyen</div></div>
-      <div class="stat-card"><div class="stat-card-val" style="color:var(--psa10)" id="s-psa10">—</div><div class="stat-card-lbl">PSA 10 moyen</div></div>
-      <div class="stat-card"><div class="stat-card-val" style="color:var(--green)" id="s-top">—</div><div class="stat-card-lbl">Carte la + chère</div></div>
+  <div class="tarea">
+    <div class="sbar">
+      <div class="sc"><div class="sc-v" id="sv-c">—</div><div class="sc-l">Variations</div></div>
+      <div class="sc"><div class="sc-v" id="sv-p">—</div><div class="sc-l">Joueurs</div></div>
+      <div class="sc"><div class="sc-v" id="sv-avg">—</div><div class="sc-l">Prix brut moy.</div></div>
+      <div class="sc"><div class="sc-v" style="color:var(--psa10)" id="sv-p10">—</div><div class="sc-l">PSA 10 moy.</div></div>
+      <div class="sc"><div class="sc-v" style="color:var(--green)" id="sv-top">—</div><div class="sc-l">Plus chère</div></div>
     </div>
-
-    <div class="set-tabs" id="set-tabs"></div>
-
-    <div class="grade-legend">
-      <span style="font-size:11px;font-weight:600;color:var(--muted)">Prix par grade :</span>
-      <div class="gl-item"><div class="gl-dot" style="background:var(--raw)"></div><span style="color:var(--muted)">Brut (ungraded)</span></div>
-      <div class="gl-item"><div class="gl-dot" style="background:var(--psa9)"></div><span style="color:var(--blue)">PSA / BGS 9</span></div>
-      <div class="gl-item"><div class="gl-dot" style="background:var(--psa10)"></div><span style="color:var(--psa10)">PSA 10 Gem Mint</span></div>
-      <div class="gl-item" style="margin-left:auto"><span style="font-size:10px;color:var(--muted2)">Source : eBay sold listings</span></div>
+    <div class="gl">
+      <span style="font-weight:600;color:var(--muted)">Prix :</span>
+      <div class="gli"><div class="gld" style="background:#888"></div>Brut (ungraded)</div>
+      <div class="gli"><div class="gld" style="background:var(--psa9)"></div>PSA 9</div>
+      <div class="gli"><div class="gld" style="background:var(--psa10)"></div>PSA 10 Gem Mint</div>
+      <span style="margin-left:auto;color:var(--muted2);font-size:10px">Source : eBay sold · SportsCardsPro</span>
     </div>
-
-    <table class="card-table" id="card-table">
-      <thead>
-        <tr>
-          <th style="width:220px">Joueur</th>
-          <th style="width:60px">#</th>
-          <th>Variation</th>
-          <th style="width:80px">Tirage</th>
-          <th class="price-col" style="width:90px">Brut</th>
-          <th class="price-col" style="width:90px">PSA 9</th>
-          <th class="price-col" style="width:100px">PSA 10</th>
-          <th class="price-col" style="width:70px">7j</th>
-          <th style="width:90px">eBay</th>
-        </tr>
-      </thead>
-      <tbody id="table-body"></tbody>
-    </table>
+    <div class="tscroll">
+      <table id="tbl">
+        <thead>
+          <tr>
+            <th data-col="player" style="min-width:180px">Joueur</th>
+            <th data-col="num" style="width:50px">#</th>
+            <th data-col="var" style="min-width:180px">Variation</th>
+            <th data-col="print" style="width:70px">Tirage</th>
+            <th data-col="raw" class="r" style="width:80px">Brut</th>
+            <th data-col="psa9" class="r" style="width:80px">PSA 9</th>
+            <th data-col="psa10" class="r" style="width:90px">PSA 10</th>
+            <th data-col="chg" class="r" style="width:65px">7j</th>
+            <th style="width:80px">eBay</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="pager" id="pager"></div>
   </div>
 </div>
 
-<!-- MODAL -->
-<div class="modal-overlay" id="modal" onclick="closeModal(event)">
-<div class="modal">
-  <div class="modal-head">
+<!-- Modal -->
+<div class="mo" id="mo" onclick="cmo(event)">
+<div class="mbox">
+  <div class="mh">
     <div>
-      <div id="m-set" style="font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px"></div>
-      <div id="m-title" style="font-size:16px;font-weight:700"></div>
+      <div id="m-set" style="font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px"></div>
+      <div id="m-title" style="font-size:15px;font-weight:700"></div>
     </div>
-    <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">✕</button>
+    <button class="mx" onclick="document.getElementById('mo').classList.remove('open')">✕</button>
   </div>
-  <div class="modal-body">
-    <div class="modal-card-preview">
-      <div class="modal-card-art" id="m-art">
-        <div class="modal-card-bg" id="m-art-bg"></div>
-        <div class="foil-overlay" id="m-foil" style="display:none"></div>
-        <img id="m-photo" src="" alt="" style="position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:top" onerror="this.style.display='none'">
-        <div class="modal-card-overlay">
-          <div class="modal-card-name" id="m-cname"></div>
-          <div class="modal-card-team" id="m-cteam"></div>
+  <div class="mb">
+    <div class="mrow">
+      <div class="mart" id="m-art">
+        <div class="mart-bg" id="m-bg"></div>
+        <div class="foil" id="m-foil" style="display:none"></div>
+        <img id="m-img" src="" alt="" onerror="this.style.display='none'">
+        <div class="mart-ov">
+          <div class="mart-name" id="m-cn"></div>
+          <div class="mart-team" id="m-ct"></div>
         </div>
       </div>
-      <div style="flex:1">
-        <div style="font-size:24px;font-weight:700;font-family:'Bebas Neue',sans-serif;letter-spacing:1px;margin-bottom:2px" id="m-player"></div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:14px" id="m-meta"></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:.8px">Prix par grade</div>
-        <table class="grade-table">
+      <div class="minfo">
+        <div class="mplayer" id="m-pl"></div>
+        <div class="mmeta" id="m-me"></div>
+        <table class="gtable">
           <thead><tr><th>Brut</th><th>PSA 8</th><th>PSA 9</th><th>PSA 10</th></tr></thead>
           <tbody><tr>
-            <td class="grade-raw" id="mg-raw">—</td>
-            <td class="grade-8" id="mg-8">—</td>
-            <td class="grade-9" id="mg-9">—</td>
-            <td class="grade-10" id="mg-10">—</td>
+            <td class="gd-raw" id="g-r">—</td>
+            <td class="gd-8" id="g-8">—</td>
+            <td class="gd-9" id="g-9">—</td>
+            <td class="gd-10" id="g-10">—</td>
           </tr></tbody>
         </table>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px" id="m-stats"></div>
+        <div class="msgrid" id="m-sg"></div>
       </div>
     </div>
-    <div class="modal-actions">
-      <a class="btn-primary" id="m-ebay" href="#" target="_blank" rel="noopener">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        Voir les ventes eBay (sold)
+    <div class="macts">
+      <a class="btn-eb" id="m-eb" href="#" target="_blank" rel="noopener">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Ventes eBay (sold listings)
       </a>
-      <button class="btn-secondary" id="m-wl">☆ Watchlist</button>
+      <button class="btn-wl" id="m-wl">☆ Watchlist</button>
     </div>
   </div>
 </div>
@@ -330,376 +333,227 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 
 <script>
 const CDN = id => `https://cdn.nba.com/headshots/nba/latest/1040x760/${id}.png`;
-const fp = p => p == null ? '—' : p >= 1000 ? '$'+(p/1000).toFixed(1)+'K' : '$'+p;
+const fp = p => p == null ? null : p >= 1000 ? '$'+(p/1000).toFixed(1)+'K' : (p >= 10 ? '$'+p : '$'+p);
 const eu = c => `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(c.player+' Topps Chrome '+c.year+' '+c.var)}&LH_Sold=1&LH_Complete=1`;
-
-// Variation types
-const VT = {
-  base:'base', rc:'rc', refractor:'refractor', auto:'auto',
-  'gold refractor':'refractor','red refractor':'refractor',
-  'blue refractor':'refractor','prism refractor':'refractor',
-  'frozenfractor':'refractor','superfractor':'refractor',
-  'silver auto':'auto','gold auto':'auto','rookie auto':'auto',sp:'sp'
-};
-const VB_CLASS = {
-  base:'vb-base',rc:'vb-rc',refractor:'vb-refractor',
-  auto:'vb-auto',sp:'vb-sp',super:'vb-super'
-};
-
-// Full Topps Chrome NBA database with all variations
-// Fields: id, player, last, nba_id, team, teamC, year, num, set, var, type, print, raw, psa9, psa10, chg, vol
-const DB = [
-// ═══════════════════════════════════════════════
-// 2024 TOPPS CHROME — Real data from SportsCardsPro
-// ═══════════════════════════════════════════════
-// Victor Wembanyama
-{id:1,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#c4ced4","#1d1160"],year:2024,num:193,set:"2024 Topps Chrome",var:"Base",type:"base",print:null,raw:1.85,psa9:17,psa10:35,chg:8.4,vol:220},
-{id:2,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#1a3060","#c4ced4"],year:2024,num:193,set:"2024 Topps Chrome",var:"Refractor",type:"refractor",print:null,raw:3.24,psa9:24.5,psa10:44,chg:5.2,vol:98},
-{id:3,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#0a2040","#c0a060"],year:2024,num:193,set:"2024 Topps Chrome",var:"Gold Refractor",type:"refractor",print:"/50",raw:72,psa9:121,psa10:346,chg:12.1,vol:18},
-{id:4,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#1a0020","#c040ff"],year:2024,num:193,set:"2024 Topps Chrome",var:"Geometric Red Refractor",type:"refractor",print:"/5",raw:268,psa9:424,psa10:1205,chg:15.4,vol:4},
-{id:5,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#c0a060","#ffd700"],year:2024,num:193,set:"2024 Topps Chrome",var:"SuperFractor",type:"refractor",print:"1/1",raw:null,psa9:null,psa10:null,chg:0,vol:0},
-{id:6,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#0a1628","#4a9eff"],year:2024,num:193,set:"2024 Topps Chrome",var:"Blue Basketball Refractor",type:"refractor",print:null,raw:3.48,psa9:14.9,psa10:110,chg:7.8,vol:44},
-{id:7,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#1a0820","#ff69b4"],year:2024,num:193,set:"2024 Topps Chrome",var:"Pink Basketball Refractor",type:"refractor",print:null,raw:2.78,psa9:10.8,psa10:44.9,chg:3.1,vol:55},
-{id:8,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#0a1628","#60d0ff"],year:2024,num:193,set:"2024 Topps Chrome",var:"Prism Refractor",type:"refractor",print:null,raw:4.2,psa9:22,psa10:65,chg:9.4,vol:62},
-
-// LeBron James
-{id:10,player:"LeBron James",last:"James",nba_id:2544,team:"Lakers",tc:["#552583","#FDB927"],year:2024,num:22,set:"2024 Topps Chrome",var:"Base",type:"base",print:null,raw:1.27,psa9:12.6,psa10:26,chg:-1.2,vol:310},
-{id:11,player:"LeBron James",last:"James",nba_id:2544,team:"Lakers",tc:["#1d1160","#FDB927"],year:2024,num:22,set:"2024 Topps Chrome",var:"Refractor",type:"refractor",print:null,raw:3.33,psa9:20.6,psa10:60.7,chg:4.2,vol:88},
-{id:12,player:"LeBron James",last:"James",nba_id:2544,team:"Lakers",tc:["#0a1628","#c0a060"],year:2024,num:22,set:"2024 Topps Chrome",var:"Gold Refractor",type:"refractor",print:"/50",raw:180,psa9:320,psa10:680,chg:6.1,vol:9},
-{id:13,player:"LeBron James",last:"James",nba_id:2544,team:"Lakers",tc:["#1a3060","#60a0ff"],year:2024,num:22,set:"2024 Topps Chrome",var:"Prism Refractor",type:"refractor",print:null,raw:3.27,psa9:17.8,psa10:57.5,chg:2.8,vol:74},
-{id:14,player:"LeBron James",last:"James",nba_id:2544,team:"Lakers",tc:["#0a1830","#e0f8ff"],year:2024,num:22,set:"2024 Topps Chrome",var:"Geometric White Refractor",type:"refractor",print:"/10",raw:116,psa9:null,psa10:null,chg:0,vol:2},
-{id:15,player:"LeBron James",last:"James",nba_id:2544,team:"Lakers",tc:["#0a2040","#80d0ff"],year:2024,num:22,set:"2024 Topps Chrome",var:"FrozenFractor",type:"refractor",print:null,raw:null,psa9:null,psa10:null,chg:0,vol:1},
-{id:16,player:"LeBron James",last:"James",nba_id:2544,team:"Lakers",tc:["#552583","#ff8c00"],year:2024,num:22,set:"2024 Topps Chrome",var:"SuperFractor",type:"refractor",print:"1/1",raw:1200,psa9:null,psa10:null,chg:0,vol:1},
-
-// Stephen Curry
-{id:20,player:"Stephen Curry",last:"Curry",nba_id:201939,team:"Warriors",tc:["#1D428A","#FFC72C"],year:2024,num:187,set:"2024 Topps Chrome",var:"Base",type:"base",print:null,raw:1.67,psa9:12.6,psa10:27.6,chg:-0.5,vol:280},
-{id:21,player:"Stephen Curry",last:"Curry",nba_id:201939,team:"Warriors",tc:["#1a3060","#FFC72C"],year:2024,num:187,set:"2024 Topps Chrome",var:"Refractor",type:"refractor",print:null,raw:1.78,psa9:16.5,psa10:40,chg:2.1,vol:92},
-{id:22,player:"Stephen Curry",last:"Curry",nba_id:201939,team:"Warriors",tc:["#0a1020","#FFC72C"],year:2024,num:187,set:"2024 Topps Chrome",var:"Black Refractor",type:"refractor",print:"/10",raw:417,psa9:null,psa10:153,chg:-4.5,vol:3},
-{id:23,player:"Stephen Curry",last:"Curry",nba_id:201939,team:"Warriors",tc:["#0a1628","#c0a060"],year:2024,num:187,set:"2024 Topps Chrome",var:"Gold Refractor",type:"refractor",print:"/50",raw:165,psa9:280,psa10:520,chg:5.8,vol:7},
-
-// Bronny James (RC)
-{id:30,player:"Bronny James Jr.",last:"Bronny",nba_id:1642355,team:"Lakers",tc:["#552583","#FDB927"],year:2024,num:149,set:"2024 Topps Chrome",var:"Base",type:"rc",print:null,raw:1.76,psa9:7,psa10:37.6,chg:22.4,vol:450},
-{id:31,player:"Bronny James Jr.",last:"Bronny",nba_id:1642355,team:"Lakers",tc:["#1a3060","#FDB927"],year:2024,num:149,set:"2024 Topps Chrome",var:"Refractor",type:"rc",print:null,raw:1.99,psa9:8.5,psa10:13.3,chg:18.7,vol:210},
-{id:32,player:"Bronny James Jr.",last:"Bronny",nba_id:1642355,team:"Lakers",tc:["#0a1830","#60d0ff"],year:2024,num:149,set:"2024 Topps Chrome",var:"FrozenFractor",type:"refractor",print:null,raw:600,psa9:482,psa10:1368,chg:9.2,vol:3},
-{id:33,player:"Bronny James Jr.",last:"Bronny",nba_id:1642355,team:"Lakers",tc:["#0a1020","#FDB927"],year:2024,num:149,set:"2024 Topps Chrome",var:"SuperFractor",type:"refractor",print:"1/1",raw:null,psa9:null,psa10:null,chg:0,vol:0},
-
-// Stephon Castle (RC)
-{id:40,player:"Stephon Castle",last:"Castle",nba_id:1642360,team:"Spurs",tc:["#c4ced4","#1d1160"],year:2024,num:122,set:"2024 Topps Chrome",var:"Base",type:"rc",print:null,raw:1.84,psa9:9,psa10:43.5,chg:14.2,vol:390},
-{id:41,player:"Stephon Castle",last:"Castle",nba_id:1642360,team:"Spurs",tc:["#1a3060","#c4ced4"],year:2024,num:122,set:"2024 Topps Chrome",var:"Refractor",type:"rc",print:null,raw:2.76,psa9:18,psa10:41,chg:11.8,vol:185},
-{id:42,player:"Stephon Castle",last:"Castle",nba_id:1642360,team:"Spurs",tc:["#0a1628","#c0a060"],year:2024,num:122,set:"2024 Topps Chrome",var:"Gold Refractor",type:"rc",print:"/50",raw:198,psa9:null,psa10:null,chg:0,vol:2},
-{id:43,player:"Stephon Castle",last:"Castle",nba_id:1642360,team:"Spurs",tc:["#0a1020","#c4ced4"],year:2024,num:122,set:"2024 Topps Chrome",var:"Geometric Black Refractor",type:"rc",print:"/2",raw:950,psa9:null,psa10:null,chg:0,vol:1},
-{id:44,player:"Stephon Castle",last:"Castle",nba_id:1642360,team:"Spurs",tc:["#c0a060","#ffd700"],year:2024,num:122,set:"2024 Topps Chrome",var:"SuperFractor",type:"rc",print:"1/1",raw:977,psa9:null,psa10:null,chg:0,vol:1},
-
-// Zaccharie Risacher (RC)
-{id:50,player:"Zaccharie Risacher",last:"Risacher",nba_id:1642361,team:"Hawks",tc:["#e03a3e","#c1d32f"],year:2024,num:169,set:"2024 Topps Chrome",var:"Base",type:"rc",print:null,raw:1.03,psa9:11.6,psa10:34.5,chg:8.9,vol:280},
-{id:51,player:"Zaccharie Risacher",last:"Risacher",nba_id:1642361,team:"Hawks",tc:["#1a3060","#c1d32f"],year:2024,num:169,set:"2024 Topps Chrome",var:"Refractor",type:"rc",print:null,raw:1.6,psa9:14,psa10:42,chg:6.2,vol:120},
-
-// Alexandre Sarr (RC)
-{id:55,player:"Alexandre Sarr",last:"Sarr",nba_id:1642362,team:"Wizards",tc:["#002B5C","#e31837"],year:2024,num:136,set:"2024 Topps Chrome",var:"Base",type:"rc",print:null,raw:1.2,psa9:10.5,psa10:28,chg:4.1,vol:240},
-{id:56,player:"Alexandre Sarr",last:"Sarr",nba_id:1642362,team:"Wizards",tc:["#1a3060","#e31837"],year:2024,num:136,set:"2024 Topps Chrome",var:"Refractor",type:"rc",print:null,raw:1.91,psa9:12.96,psa10:17.3,chg:2.8,vol:88},
-
-// Nikola Jokic
-{id:60,player:"Nikola Jokic",last:"Jokic",nba_id:203999,team:"Nuggets",tc:["#0E2240","#FEC524"],year:2024,num:66,set:"2024 Topps Chrome",var:"Base",type:"base",print:null,raw:1.5,psa9:14,psa10:32,chg:3.2,vol:195},
-{id:61,player:"Nikola Jokic",last:"Jokic",nba_id:203999,team:"Nuggets",tc:["#1a3060","#FEC524"],year:2024,num:66,set:"2024 Topps Chrome",var:"Refractor",type:"refractor",print:null,raw:2.8,psa9:19,psa10:50,chg:4.5,vol:68},
-{id:62,player:"Nikola Jokic",last:"Jokic",nba_id:203999,team:"Nuggets",tc:["#0a1628","#c0a060"],year:2024,num:66,set:"2024 Topps Chrome",var:"Gold Refractor",type:"refractor",print:"/50",raw:145,psa9:220,psa10:480,chg:7.2,vol:6},
-{id:63,player:"Nikola Jokic",last:"Jokic",nba_id:203999,team:"Nuggets",tc:["#0a1020","#FEC524"],year:2024,num:66,set:"2024 Topps Chrome",var:"SuperFractor",type:"refractor",print:"1/1",raw:null,psa9:null,psa10:null,chg:0,vol:0},
-
-// Giannis
-{id:70,player:"Giannis Antetokounmpo",last:"Giannis",nba_id:203507,team:"Bucks",tc:["#00471B","#EEE1C6"],year:2024,num:41,set:"2024 Topps Chrome",var:"Base",type:"base",print:null,raw:1.27,psa9:10,psa10:28,chg:1.1,vol:210},
-{id:71,player:"Giannis Antetokounmpo",last:"Giannis",nba_id:203507,team:"Bucks",tc:["#1a4020","#EEE1C6"],year:2024,num:41,set:"2024 Topps Chrome",var:"Refractor",type:"refractor",print:null,raw:2.4,psa9:16,psa10:44,chg:2.2,vol:72},
-{id:72,player:"Giannis Antetokounmpo",last:"Giannis",nba_id:203507,team:"Bucks",tc:["#0a1628","#c0a060"],year:2024,num:41,set:"2024 Topps Chrome",var:"Gold Refractor",type:"refractor",print:"/50",raw:110,psa9:180,psa10:390,chg:3.8,vol:5},
-
-// Jaylen Wells (RC) — FrozenFractor hit
-{id:80,player:"Jaylen Wells",last:"Wells",nba_id:1642380,team:"Grizzlies",tc:["#5D76A9","#12173F"],year:2024,num:185,set:"2024 Topps Chrome",var:"Base",type:"rc",print:null,raw:0.8,psa9:9,psa10:28,chg:4.5,vol:180},
-{id:81,player:"Jaylen Wells",last:"Wells",nba_id:1642380,team:"Grizzlies",tc:["#0a1830","#60d0ff"],year:2024,num:185,set:"2024 Topps Chrome",var:"FrozenFractor",type:"refractor",print:null,raw:305,psa9:482,psa10:1368,chg:22.4,vol:4},
-
-// Luka Doncic
-{id:90,player:"Luka Doncic",last:"Doncic",nba_id:1629029,team:"Lakers",tc:["#552583","#FDB927"],year:2024,num:96,set:"2024 Topps Chrome",var:"Base",type:"base",print:null,raw:2.2,psa9:18,psa10:42,chg:5.1,vol:310},
-{id:91,player:"Luka Doncic",last:"Doncic",nba_id:1629029,team:"Lakers",tc:["#1a3060","#FDB927"],year:2024,num:96,set:"2024 Topps Chrome",var:"Refractor",type:"refractor",print:null,raw:3.8,psa9:24,psa10:68,chg:6.4,vol:120},
-{id:92,player:"Luka Doncic",last:"Doncic",nba_id:1629029,team:"Lakers",tc:["#0a1628","#c0a060"],year:2024,num:96,set:"2024 Topps Chrome",var:"Gold Refractor",type:"refractor",print:"/50",raw:220,psa9:380,psa10:840,chg:8.9,vol:8},
-
-// Jalen Brunson
-{id:100,player:"Jalen Brunson",last:"Brunson",nba_id:1628384,team:"Knicks",tc:["#006BB6","#F58426"],year:2024,num:47,set:"2024 Topps Chrome",var:"Base",type:"base",print:null,raw:1.79,psa9:20.5,psa10:37.9,chg:4.2,vol:165},
-{id:101,player:"Jalen Brunson",last:"Brunson",nba_id:1628384,team:"Knicks",tc:["#1a3060","#F58426"],year:2024,num:47,set:"2024 Topps Chrome",var:"Refractor",type:"refractor",print:null,raw:2.9,psa9:26,psa10:54,chg:5.8,vol:65},
-
-// Allen Iverson (Retro Insert)
-{id:110,player:"Allen Iverson",last:"Iverson",nba_id:947,team:"76ers",tc:["#006BB6","#ED174C"],year:2024,num:94,set:"2024 Topps Chrome",var:"Base",type:"base",print:null,raw:1.12,psa9:11.7,psa10:34.9,chg:1.5,vol:140},
-{id:111,player:"Allen Iverson",last:"Iverson",nba_id:947,team:"76ers",tc:["#1a3060","#ED174C"],year:2024,num:94,set:"2024 Topps Chrome",var:"Refractor",type:"refractor",print:null,raw:1.8,psa9:14,psa10:42,chg:2.1,vol:58},
-{id:112,player:"Allen Iverson",last:"Iverson",nba_id:947,team:"76ers",tc:["#c0a060","#ffd700"],year:2024,num:94,set:"2024 Topps Chrome",var:"SuperFractor",type:"refractor",print:"1/1",raw:1200,psa9:null,psa10:null,chg:0,vol:1},
-
-// Shaquille O'Neal
-{id:120,player:"Shaquille O'Neal",last:"Shaq",nba_id:406,team:"Lakers",tc:["#552583","#FDB927"],year:2024,num:171,set:"2024 Topps Chrome",var:"Base",type:"base",print:null,raw:1.62,psa9:7.5,psa10:37.4,chg:2.8,vol:155},
-{id:121,player:"Shaquille O'Neal",last:"Shaq",nba_id:406,team:"Lakers",tc:["#1a4030","#FDB927"],year:2024,num:171,set:"2024 Topps Chrome",var:"Topps Green Refractor",type:"refractor",print:null,raw:2.0,psa9:13.1,psa10:38.8,chg:1.9,vol:60},
-{id:122,player:"Shaquille O'Neal",last:"Shaq",nba_id:406,team:"Lakers",tc:["#c0a060","#ffd700"],year:2024,num:171,set:"2024 Topps Chrome",var:"SuperFractor",type:"refractor",print:"1/1",raw:650,psa9:null,psa10:null,chg:0,vol:1},
-
-// Larry Bird
-{id:130,player:"Larry Bird",last:"Bird",nba_id:1449,team:"Celtics",tc:["#007A33","#BA9653"],year:2024,num:32,set:"2024 Topps Chrome",var:"Base",type:"base",print:null,raw:1.54,psa9:12.5,psa10:37.1,chg:0.8,vol:130},
-{id:131,player:"Larry Bird",last:"Bird",nba_id:1449,team:"Celtics",tc:["#1a4030","#BA9653"],year:2024,num:32,set:"2024 Topps Chrome",var:"Refractor",type:"refractor",print:null,raw:2.0,psa9:13.1,psa10:38.8,chg:1.2,vol:48},
-
-// Magic Johnson
-{id:135,player:"Magic Johnson",last:"Magic",nba_id:1893,team:"Lakers",tc:["#552583","#FDB927"],year:2024,num:59,set:"2024 Topps Chrome",var:"Base",type:"base",print:null,raw:1.65,psa9:12.3,psa10:36.5,chg:0.5,vol:120},
-{id:136,player:"Magic Johnson",last:"Magic",nba_id:1893,team:"Lakers",tc:["#1a3060","#FDB927"],year:2024,num:59,set:"2024 Topps Chrome",var:"Refractor",type:"refractor",print:null,raw:2.4,psa9:15,psa10:42,chg:1.8,vol:44},
-
-// LaMelo Ball
-{id:140,player:"LaMelo Ball",last:"LaMelo",nba_id:1630163,team:"Hornets",tc:["#00788C","#1D1160"],year:2024,num:3,set:"2024 Topps Chrome",var:"Base",type:"base",print:null,raw:1.5,psa9:12.3,psa10:36.6,chg:3.4,vol:175},
-{id:141,player:"LaMelo Ball",last:"LaMelo",nba_id:1630163,team:"Hornets",tc:["#1a3060","#00788C"],year:2024,num:3,set:"2024 Topps Chrome",var:"Refractor",type:"refractor",print:null,raw:2.6,psa9:17,psa10:48,chg:4.1,vol:62},
-
-// ═══════════════════════════════════════════════
-// 2023 TOPPS CHROME
-// ═══════════════════════════════════════════════
-{id:200,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#c4ced4","#1d1160"],year:2023,num:201,set:"2023 Topps Chrome",var:"Base",type:"rc",print:null,raw:4.5,psa9:28,psa10:65,chg:6.2,vol:380},
-{id:201,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#1a3060","#c4ced4"],year:2023,num:201,set:"2023 Topps Chrome",var:"Refractor",type:"rc",print:null,raw:8.9,psa9:55,psa10:140,chg:8.4,vol:220},
-{id:202,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#0a1628","#c0a060"],year:2023,num:201,set:"2023 Topps Chrome",var:"Gold Refractor",type:"rc",print:"/50",raw:520,psa9:900,psa10:2400,chg:14.2,vol:12},
-{id:203,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#c0a060","#ffd700"],year:2023,num:201,set:"2023 Topps Chrome",var:"SuperFractor",type:"rc",print:"1/1",raw:null,psa9:null,psa10:null,chg:0,vol:0},
-{id:204,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#0d0d20","#c4ced4"],year:2023,num:201,set:"2023 Topps Chrome",var:"Auto Silver",type:"auto",print:null,raw:680,psa9:1100,psa10:2800,chg:11.7,vol:22},
-{id:205,player:"Victor Wembanyama",last:"Wembanyama",nba_id:1641705,team:"Spurs",tc:["#0a1628","#c0a060"],year:2023,num:201,set:"2023 Topps Chrome",var:"Auto Gold",type:"auto",print:"/50",raw:2400,psa9:3900,psa10:8500,chg:9.8,vol:4},
-
-{id:210,player:"LeBron James",last:"James",nba_id:2544,team:"Lakers",tc:["#552583","#FDB927"],year:2023,num:1,set:"2023 Topps Chrome",var:"Base",type:"base",print:null,raw:2.1,psa9:14,psa10:38,chg:0.8,vol:290},
-{id:211,player:"LeBron James",last:"James",nba_id:2544,team:"Lakers",tc:["#1a3060","#FDB927"],year:2023,num:1,set:"2023 Topps Chrome",var:"Refractor",type:"refractor",print:null,raw:3.8,psa9:22,psa10:65,chg:2.1,vol:88},
-{id:212,player:"LeBron James",last:"James",nba_id:2544,team:"Lakers",tc:["#0a1628","#c0a060"],year:2023,num:1,set:"2023 Topps Chrome",var:"Gold Refractor",type:"refractor",print:"/50",raw:210,psa9:360,psa10:780,chg:4.5,vol:7},
-{id:213,player:"LeBron James",last:"James",nba_id:2544,team:"Lakers",tc:["#552583","#ff8c00"],year:2023,num:1,set:"2023 Topps Chrome",var:"Auto",type:"auto",print:null,raw:1450,psa9:2200,psa10:4800,chg:3.2,vol:9},
-
-{id:220,player:"Stephen Curry",last:"Curry",nba_id:201939,team:"Warriors",tc:["#1D428A","#FFC72C"],year:2023,num:30,set:"2023 Topps Chrome",var:"Base",type:"base",print:null,raw:1.9,psa9:13,psa10:30,chg:1.5,vol:240},
-{id:221,player:"Stephen Curry",last:"Curry",nba_id:201939,team:"Warriors",tc:["#1a3060","#FFC72C"],year:2023,num:30,set:"2023 Topps Chrome",var:"Gold Refractor",type:"refractor",print:"/50",raw:320,psa9:520,psa10:1100,chg:5.8,vol:6},
-{id:222,player:"Stephen Curry",last:"Curry",nba_id:201939,team:"Warriors",tc:["#1D428A","#fff"],year:2023,num:30,set:"2023 Topps Chrome",var:"SuperFractor",type:"refractor",print:"1/1",raw:null,psa9:null,psa10:null,chg:0,vol:0},
-
-{id:230,player:"Nikola Jokic",last:"Jokic",nba_id:203999,team:"Nuggets",tc:["#0E2240","#FEC524"],year:2023,num:15,set:"2023 Topps Chrome",var:"Base",type:"base",print:null,raw:1.8,psa9:15,psa10:34,chg:2.8,vol:210},
-{id:231,player:"Nikola Jokic",last:"Jokic",nba_id:203999,team:"Nuggets",tc:["#0a1628","#c0a060"],year:2023,num:15,set:"2023 Topps Chrome",var:"Gold Refractor",type:"refractor",print:"/50",raw:280,psa9:450,psa10:980,chg:6.4,vol:5},
-{id:232,player:"Nikola Jokic",last:"Jokic",nba_id:203999,team:"Nuggets",tc:["#0E2240","#FEC524"],year:2023,num:15,set:"2023 Topps Chrome",var:"Auto",type:"auto",print:null,raw:1100,psa9:1800,psa10:3800,chg:8.2,vol:7},
-
-{id:240,player:"Luka Doncic",last:"Doncic",nba_id:1629029,team:"Mavericks",tc:["#0053BC","#00B2A9"],year:2023,num:77,set:"2023 Topps Chrome",var:"Base",type:"base",print:null,raw:2.4,psa9:18,psa10:44,chg:-1.1,vol:280},
-{id:241,player:"Luka Doncic",last:"Doncic",nba_id:1629029,team:"Mavericks",tc:["#0a1628","#c0a060"],year:2023,num:77,set:"2023 Topps Chrome",var:"Gold Refractor",type:"refractor",print:"/50",raw:380,psa9:640,psa10:1400,chg:5.9,vol:4},
-{id:242,player:"Luka Doncic",last:"Doncic",nba_id:1629029,team:"Mavericks",tc:["#0a1020","#00B2A9"],year:2023,num:77,set:"2023 Topps Chrome",var:"Auto Gold",type:"auto",print:"/10",raw:3400,psa9:null,psa10:null,chg:5.2,vol:2},
-
-{id:250,player:"Jayson Tatum",last:"Tatum",nba_id:1628369,team:"Celtics",tc:["#007A33","#BA9653"],year:2023,num:77,set:"2023 Topps Chrome",var:"Base",type:"base",print:null,raw:2.2,psa9:15,psa10:36,chg:1.5,vol:225},
-{id:251,player:"Jayson Tatum",last:"Tatum",nba_id:1628369,team:"Celtics",tc:["#007A33","#BA9653"],year:2023,num:77,set:"2023 Topps Chrome",var:"Auto Silver",type:"auto",print:"/199",price:420,low:320,high:560,chg:6.5,vol:28,raw:420,psa9:680,psa10:1500},
-
-// ═══════════════════════════════════════════════
-// 2022 TOPPS CHROME
-// ═══════════════════════════════════════════════
-{id:300,player:"Paolo Banchero",last:"Banchero",nba_id:1631094,team:"Magic",tc:["#0077C0","#C4CED4"],year:2022,num:201,set:"2022 Topps Chrome",var:"Base",type:"rc",print:null,raw:2.8,psa9:18,psa10:52,chg:3.5,vol:320},
-{id:301,player:"Paolo Banchero",last:"Banchero",nba_id:1631094,team:"Magic",tc:["#1a3060","#C4CED4"],year:2022,num:201,set:"2022 Topps Chrome",var:"Refractor",type:"rc",print:null,raw:5.2,psa9:32,psa10:88,chg:4.8,vol:145},
-{id:302,player:"Paolo Banchero",last:"Banchero",nba_id:1631094,team:"Magic",tc:["#0a1628","#c0a060"],year:2022,num:201,set:"2022 Topps Chrome",var:"Gold Refractor",type:"rc",print:"/50",raw:185,psa9:290,psa10:620,chg:6.2,vol:8},
-{id:303,player:"Paolo Banchero",last:"Banchero",nba_id:1631094,team:"Magic",tc:["#0077C0","#C4CED4"],year:2022,num:201,set:"2022 Topps Chrome",var:"Auto Silver",type:"auto",print:"/199",raw:320,psa9:520,psa10:1100,chg:5.8,vol:14},
-
-{id:310,player:"Chet Holmgren",last:"Holmgren",nba_id:1631096,team:"Thunder",tc:["#007AC1","#EF3B24"],year:2022,num:198,set:"2022 Topps Chrome",var:"Base",type:"rc",print:null,raw:1.9,psa9:14,psa10:42,chg:5.2,vol:285},
-{id:311,player:"Chet Holmgren",last:"Holmgren",nba_id:1631096,team:"Thunder",tc:["#1a3060","#EF3B24"],year:2022,num:198,set:"2022 Topps Chrome",var:"Refractor",type:"rc",print:null,raw:3.4,psa9:22,psa10:68,chg:6.8,vol:120},
-{id:312,player:"Chet Holmgren",last:"Holmgren",nba_id:1631096,team:"Thunder",tc:["#007AC1","#EF3B24"],year:2022,num:198,set:"2022 Topps Chrome",var:"Auto Silver",type:"auto",print:"/199",raw:285,psa9:460,psa10:980,chg:7.4,vol:16},
-
-{id:320,player:"Jabari Smith Jr.",last:"Smith",nba_id:1631109,team:"Rockets",tc:["#CE1141","#C4CED4"],year:2022,num:202,set:"2022 Topps Chrome",var:"Base",type:"rc",print:null,raw:1.5,psa9:11,psa10:34,chg:2.1,vol:220},
-{id:321,player:"Jabari Smith Jr.",last:"Smith",nba_id:1631109,team:"Rockets",tc:["#1a3060","#C4CED4"],year:2022,num:202,set:"2022 Topps Chrome",var:"Refractor",type:"rc",print:null,raw:2.8,psa9:17,psa10:52,chg:3.4,vol:88},
-{id:322,player:"Jabari Smith Jr.",last:"Smith",nba_id:1631109,team:"Rockets",tc:["#CE1141","#C4CED4"],year:2022,num:202,set:"2022 Topps Chrome",var:"Auto Silver",type:"auto",print:"/199",raw:145,psa9:240,psa10:520,chg:2.8,vol:22},
-
-{id:330,player:"LeBron James",last:"James",nba_id:2544,team:"Lakers",tc:["#552583","#FDB927"],year:2022,num:1,set:"2022 Topps Chrome",var:"Base",type:"base",print:null,raw:2.8,psa9:16,psa10:44,chg:1.5,vol:260},
-{id:331,player:"LeBron James",last:"James",nba_id:2544,team:"Lakers",tc:["#552583","#ff8c00"],year:2022,num:1,set:"2022 Topps Chrome",var:"Auto",type:"auto",print:null,raw:1800,psa9:2800,psa10:5800,chg:3.2,vol:6},
-
-{id:340,player:"Stephen Curry",last:"Curry",nba_id:201939,team:"Warriors",tc:["#1D428A","#FFC72C"],year:2022,num:30,set:"2022 Topps Chrome",var:"Base",type:"base",print:null,raw:2.2,psa9:14,psa10:36,chg:0.5,vol:200},
-{id:341,player:"Stephen Curry",last:"Curry",nba_id:201939,team:"Warriors",tc:["#c0a060","#ffd700"],year:2022,num:30,set:"2022 Topps Chrome",var:"SuperFractor",type:"refractor",print:"1/1",raw:12500,psa9:null,psa10:null,chg:0,vol:1},
-
-{id:350,player:"Nikola Jokic",last:"Jokic",nba_id:203999,team:"Nuggets",tc:["#0E2240","#FEC524"],year:2022,num:15,set:"2022 Topps Chrome",var:"Gold Refractor",type:"refractor",print:"/50",raw:420,psa9:680,psa10:1450,chg:6.4,vol:5},
-{id:351,player:"Nikola Jokic",last:"Jokic",nba_id:203999,team:"Nuggets",tc:["#0E2240","#FEC524"],year:2022,num:15,set:"2022 Topps Chrome",var:"Auto",type:"auto",print:null,raw:920,psa9:1500,psa10:3200,chg:5.2,vol:8},
-
-{id:360,player:"Luka Doncic",last:"Doncic",nba_id:1629029,team:"Mavericks",tc:["#0053BC","#00B2A9"],year:2022,num:77,set:"2022 Topps Chrome",var:"Auto Gold",type:"auto",print:"/10",raw:3400,psa9:null,psa10:null,chg:5.9,vol:3},
-];
-
-// ── State ──
-let wl=new Set(), fy="", ft="", fteam="", fplayer="", fvar="", section="all";
-
-function varType(v){
-  const lv=v.toLowerCase();
-  if(lv.includes('auto')) return 'auto';
-  if(lv==='base') return 'base';
-  if(lv.includes('superfractor')) return 'refractor';
-  if(lv.includes('refractor')||lv.includes('fractor')) return 'refractor';
-  return 'base';
-}
-function varBadge(type,v){
-  if(v==='SuperFractor') return `<span class="var-badge vb-super">1/1</span>`;
-  if(type==='auto') return `<span class="var-badge vb-auto">AUTO</span>`;
-  if(type==='rc') return `<span class="var-badge vb-rc">RC</span>`;
-  if(type==='refractor'&&v!=='Base') return `<span class="var-badge vb-refractor">FOIL</span>`;
-  if(type==='sp') return `<span class="var-badge vb-sp">SP</span>`;
-  return '';
-}
-function printBadge(p){
-  if(!p) return '';
-  if(p==='1/1') return `<span class="print-run super">1/1</span>`;
-  if(p.includes('/5')||p.includes('/10')) return `<span class="print-run red">${p}</span>`;
-  if(p.includes('/50')) return `<span class="print-run gold">${p}</span>`;
-  return `<span class="print-run">${p}</span>`;
-}
-function cardBg(c){
-  const t=c.type;
-  if(c.var==='SuperFractor') return 'linear-gradient(135deg,#b8860b,#ffd700,#b8860b)';
-  if(c.var.includes('FrozenFractor')) return 'linear-gradient(135deg,#0a1830,#60d0ff,#0a1830)';
-  if(c.var.includes('Gold')) return `linear-gradient(135deg,${c.tc[0]},#c0a060)`;
-  if(c.var.includes('Red')||c.var.includes('red')) return `linear-gradient(135deg,#1a0000,#8b0000)`;
-  if(c.var.includes('Black')||c.var.includes('black')) return `linear-gradient(135deg,#0a0a0a,#333)`;
-  if(t==='auto') return `linear-gradient(135deg,#1a0a08,${c.tc[0]})`;
+const cardBg = c => {
+  const v = c.var;
+  if(v === 'SuperFractor') return 'linear-gradient(135deg,#b8860b,#ffd700,#b8860b)';
+  if(v.includes('FrozenFractor')) return 'linear-gradient(135deg,#081828,#60d0ff,#081828)';
+  if(v.includes('Gold')) return `linear-gradient(135deg,${c.tc[0]},#c0a060)`;
+  if(v.includes('Red') && !v.includes('Red W')) return `linear-gradient(135deg,#1a0000,#8b0000)`;
+  if(v.includes('Black')) return `linear-gradient(135deg,#080808,#282828)`;
+  if(v.includes('Purple')) return `linear-gradient(135deg,#180828,#5020a0)`;
+  if(v.includes('Orange')) return `linear-gradient(135deg,#1a0808,#c05010)`;
+  if(v.includes('Green')) return `linear-gradient(135deg,#081808,#206820)`;
+  if(v.includes('Blue')) return `linear-gradient(135deg,#080818,#1848a0)`;
+  if(c.type === 'auto') return `linear-gradient(135deg,#1a0a08,${c.tc[0]})`;
   return `linear-gradient(155deg,${c.tc[0]},${c.tc[1]})`;
-}
+};
+const vbadge = c => {
+  if(c.var === 'SuperFractor') return '<span class="vbadge vb-sp">1/1</span>';
+  if(c.type === 'auto') return '<span class="vbadge vb-auto">AUTO</span>';
+  if(c.type === 'rc') return '<span class="vbadge vb-rc">RC</span>';
+  if(c.type === 'refractor') return '<span class="vbadge vb-ref">FOIL</span>';
+  return '';
+};
+const prbadge = p => {
+  if(!p) return '';
+  if(p === '1/1') return '<span class="pr super">1/1</span>';
+  if(p === '/5' || p === '/10') return `<span class="pr red">${p}</span>`;
+  if(p === '/50' || p === '/25') return `<span class="pr gold">${p}</span>`;
+  return `<span class="pr">${p}</span>`;
+};
 
-function getFiltered(){
-  const q=document.getElementById("q").value.toLowerCase();
-  let arr=[...DB];
-  if(fy) arr=arr.filter(c=>c.year===parseInt(fy));
-  if(ft) arr=arr.filter(c=>{
-    if(ft==='rc') return c.type==='rc';
-    if(ft==='auto') return c.type==='auto';
-    if(ft==='refractor') return c.type==='refractor';
-    if(ft==='sp') return c.type==='sp';
-    if(ft==='base') return c.type==='base';
+let DB = [], filtered = [], wl = new Set();
+let fy='', ft='', fteam='', fplayer='', fvar='', section='all', sortCol='pd';
+const PAGE = 50;
+let page = 0;
+
+// Load DB
+fetch('db.json').then(r=>r.json()).then(data=>{
+  DB = data;
+  buildNav();
+  applyFilters();
+});
+
+function applyFilters() {
+  const q = document.getElementById('q').value.toLowerCase();
+  let arr = DB.filter(c => {
+    if(fy && c.year !== parseInt(fy)) return false;
+    if(ft) {
+      if(ft==='rc' && c.type!=='rc') return false;
+      if(ft==='auto' && c.type!=='auto') return false;
+      if(ft==='refractor' && c.type!=='refractor') return false;
+      if(ft==='base' && c.type!=='base') return false;
+    }
+    if(fteam && c.team !== fteam) return false;
+    if(fplayer && c.player !== fplayer) return false;
+    if(fvar && !c.var.toLowerCase().includes(fvar.toLowerCase())) return false;
+    if(section==='rookies' && c.type!=='rc') return false;
+    if(section==='autos' && c.type!=='auto') return false;
+    if(section==='hot' && c.chg < 10) return false;
+    if(q && ![c.player,c.set||'',c.team,c.var].some(s=>s.toLowerCase().includes(q))) return false;
     return true;
   });
-  if(fteam) arr=arr.filter(c=>c.team===fteam);
-  if(fplayer) arr=arr.filter(c=>c.player===fplayer);
-  if(fvar) arr=arr.filter(c=>c.var.toLowerCase().includes(fvar.toLowerCase()));
-  if(section==='rookies') arr=arr.filter(c=>c.type==='rc');
-  if(section==='autos') arr=arr.filter(c=>c.type==='auto');
-  if(section==='top') arr=arr.filter(c=>(c.raw||0)>=50||(c.psa10||0)>=100);
-  if(q) arr=arr.filter(c=>[c.player,c.set,c.team,c.var].some(s=>s.toLowerCase().includes(q)));
-  const s=document.getElementById("sort-sel").value;
-  if(s==="pd") arr.sort((a,b)=>(b.raw||0)-(a.raw||0));
-  else if(s==="pa") arr.sort((a,b)=>(a.raw||999999)-(b.raw||999999));
-  else if(s==="p10d") arr.sort((a,b)=>(b.psa10||0)-(a.psa10||0));
-  else if(s==="p10a") arr.sort((a,b)=>(a.psa10||999999)-(b.psa10||999999));
-  else if(s==="na") arr.sort((a,b)=>a.player.localeCompare(b.player));
-  else if(s==="num") arr.sort((a,b)=>a.num-b.num);
-  return arr;
+  // Sort
+  if(sortCol==='pd') arr.sort((a,b)=>(b.raw||0)-(a.raw||0));
+  else if(sortCol==='pa') arr.sort((a,b)=>(a.raw||999999)-(b.raw||999999));
+  else if(sortCol==='p10') arr.sort((a,b)=>(b.psa10||0)-(a.psa10||0));
+  else if(sortCol==='na') arr.sort((a,b)=>a.player.localeCompare(b.player));
+  else if(sortCol==='num') arr.sort((a,b)=>a.num-b.num);
+  else if(sortCol==='chg') arr.sort((a,b)=>b.chg-a.chg);
+  filtered = arr;
+  page = 0;
+  updateStats();
+  renderTable();
 }
 
-function render(){
-  const arr=getFiltered();
-  document.getElementById("cc").textContent=arr.length;
-  document.getElementById("hv-total").textContent=arr.length;
-  document.getElementById("s-count").textContent=arr.length;
-  const rawPrices=arr.filter(c=>c.raw).map(c=>c.raw);
-  const avg=rawPrices.length?Math.round(rawPrices.reduce((a,b)=>a+b,0)/rawPrices.length*100)/100:0;
-  document.getElementById("s-avg").textContent=avg>0?fp(avg):'—';
-  const psa10s=arr.filter(c=>c.psa10).map(c=>c.psa10);
-  const avgP10=psa10s.length?Math.round(psa10s.reduce((a,b)=>a+b,0)/psa10s.length):0;
-  document.getElementById("s-psa10").textContent=avgP10>0?fp(avgP10):'—';
-  const topPrice=Math.max(...arr.map(c=>c.psa10||c.raw||0));
-  document.getElementById("s-top").textContent=topPrice>0?fp(topPrice):'—';
-
-  // Set tabs
-  const sets=[...new Set(arr.map(c=>c.set))].sort().reverse();
-  const stabs=document.getElementById("set-tabs");
-  const curSet=stabs.dataset.active||sets[0]||'';
-  if(!stabs.dataset.active&&sets[0]) stabs.dataset.active=sets[0];
-  stabs.innerHTML=sets.map(s=>`<div class="set-tab${s===curSet?' on':''}" onclick="setActiveSet('${s}')">${s}</div>`).join('');
-
-  renderTable(arr);
+function updateStats(){
+  const arr = filtered;
+  const uq = [...new Set(arr.map(c=>c.player))];
+  document.getElementById('hv-c').textContent = arr.length.toLocaleString();
+  document.getElementById('hv-p').textContent = uq.length;
+  document.getElementById('cc').textContent = arr.length.toLocaleString();
+  document.getElementById('ct').textContent = DB.length.toLocaleString();
+  document.getElementById('sv-c').textContent = arr.length.toLocaleString();
+  document.getElementById('sv-p').textContent = uq.length;
+  const raws = arr.filter(c=>c.raw).map(c=>c.raw);
+  const avg = raws.length ? (raws.reduce((a,b)=>a+b,0)/raws.length) : 0;
+  document.getElementById('sv-avg').textContent = avg ? fp(Math.round(avg*100)/100) : '—';
+  const p10s = arr.filter(c=>c.psa10).map(c=>c.psa10);
+  const avgP10 = p10s.length ? Math.round(p10s.reduce((a,b)=>a+b,0)/p10s.length) : 0;
+  document.getElementById('sv-p10').textContent = avgP10 ? fp(avgP10) : '—';
+  const topP = Math.max(0,...arr.map(c=>c.psa10||c.raw||0));
+  document.getElementById('sv-top').textContent = topP ? fp(topP) : '—';
 }
 
-function setActiveSet(s){
-  document.getElementById("set-tabs").dataset.active=s;
-  document.querySelectorAll(".set-tab").forEach(t=>t.classList.toggle("on",t.textContent===s));
-  renderTable(getFiltered());
-}
-
-function renderTable(arr){
-  const curSet=document.getElementById("set-tabs").dataset.active||'';
-  const filtered=curSet?arr.filter(c=>c.set===curSet):arr;
-  const tbody=document.getElementById("table-body");
-  tbody.innerHTML=filtered.map(c=>{
-    const up=c.chg>=0;
-    const vtype=c.type==='auto'?'auto':c.type==='rc'?'rc':varType(c.var);
-    return`<tr onclick="openModal(${c.id})">
-      <td>
-        <div class="player-cell">
-          <div class="player-thumb">
-            <img src="${CDN(c.nba_id)}" alt="${c.player}" onerror="this.style.display='none'" loading="lazy">
-          </div>
-          <div class="player-info">
-            <div class="player-name">${c.player}</div>
-            <div class="player-meta">${c.team} · ${c.year}</div>
-          </div>
-        </div>
-      </td>
-      <td style="color:var(--muted);font-size:12px">#${c.num}</td>
-      <td>
-        <span class="var-name">${c.var}</span>
-        ${varBadge(vtype,c.var)}
-      </td>
-      <td>${printBadge(c.print)}</td>
-      <td class="price-col"><span class="price-raw">${c.raw!=null?fp(c.raw):'<span class="price-empty">—</span>'}</span></td>
-      <td class="price-col"><span class="price-psa9">${c.psa9!=null?fp(c.psa9):'<span class="price-empty">—</span>'}</span></td>
-      <td class="price-col"><span class="price-psa10">${c.psa10!=null?fp(c.psa10):'<span class="price-empty">—</span>'}</span></td>
-      <td class="price-col"><span class="price-chg ${up?'price-up':'price-down'}">${c.vol>0?(up?'▲':'▼')+' '+Math.abs(c.chg)+'%':'—'}</span></td>
-      <td><a class="ebay-link" href="${eu(c)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">eBay ↗</a></td>
+function renderTable() {
+  const start = page * PAGE;
+  const slice = filtered.slice(start, start + PAGE);
+  const tbody = document.getElementById('tbody');
+  tbody.innerHTML = slice.map(c => {
+    const up = c.chg >= 0;
+    return `<tr onclick="openModal(${c.id})">
+      <td><div class="pc">
+        <div class="pthumb"><img src="${CDN(c.nba_id)}" alt="${c.player}" loading="lazy" onerror="this.style.display='none'"></div>
+        <div><div class="pname">${c.player}</div><div class="pmeta">${c.team} · ${c.year}</div></div>
+      </div></td>
+      <td style="color:var(--muted)">#${c.num}</td>
+      <td>${c.var}${vbadge(c)}</td>
+      <td>${prbadge(c.print)}</td>
+      <td class="r"><span class="p-raw">${c.raw != null ? fp(c.raw) : '<span class="p-nil">—</span>'}</span></td>
+      <td class="r"><span class="p-9">${c.psa9 != null ? fp(c.psa9) : '<span class="p-nil">—</span>'}</span></td>
+      <td class="r"><span class="p-10">${c.psa10 != null ? fp(c.psa10) : '<span class="p-nil">—</span>'}</span></td>
+      <td class="r"><span class="${up?'chg-up':'chg-dn'}">${c.vol>0?(up?'▲':'▼')+' '+Math.abs(c.chg)+'%':'—'}</span></td>
+      <td><a class="ebay-a" href="${eu(c)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">eBay ↗</a></td>
     </tr>`;
   }).join('');
+  renderPager();
 }
 
-function openModal(id){
-  const c=DB.find(x=>x.id===id);
-  document.getElementById("m-set").textContent=c.set;
-  document.getElementById("m-title").textContent=c.player+' — '+c.var+(c.print?' '+c.print:'');
-  document.getElementById("m-art-bg").style.background=cardBg(c);
-  const foil=document.getElementById("m-foil");
-  foil.style.display=c.type!=='base'?'block':'none';
-  const ph=document.getElementById("m-photo");ph.src=CDN(c.nba_id);ph.style.display='';
-  document.getElementById("m-cname").textContent=c.last.toUpperCase();
-  document.getElementById("m-cteam").textContent=c.team+' #'+c.num;
-  document.getElementById("m-player").textContent=c.player;
-  document.getElementById("m-meta").textContent=c.set+' · '+c.var+(c.print?' · '+c.print:'');
-  document.getElementById("mg-raw").textContent=c.raw!=null?fp(c.raw):'—';
-  document.getElementById("mg-8").textContent=c.psa9!=null?fp(Math.round(c.psa9*0.65)):'—';
-  document.getElementById("mg-9").textContent=c.psa9!=null?fp(c.psa9):'—';
-  document.getElementById("mg-10").textContent=c.psa10!=null?fp(c.psa10):'—';
-  document.getElementById("m-stats").innerHTML=[
-    {l:"Équipe",v:c.team},{l:"Année",v:c.year},
-    {l:"Numéro",v:'#'+c.num},{l:"Tirage",v:c.print||'Non limité'},
-    {l:"Volume 7j",v:c.vol>0?c.vol+' ventes':'<1 vente'},{l:"Variation",v:c.chg!==0?(c.chg>0?'+':'')+c.chg+'%':'—'}
-  ].map(s=>`<div style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:8px 10px"><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px">${s.l}</div><div style="font-size:13px;font-weight:600">${s.v}</div></div>`).join('');
-  document.getElementById("m-ebay").href=eu(c);
-  const wb=document.getElementById("m-wl");wb.textContent=wl.has(id)?'★ Watchlist':'☆ Watchlist';
-  wb.onclick=()=>{wl.has(id)?wl.delete(id):wl.add(id);wb.textContent=wl.has(id)?'★ Watchlist':'☆ Watchlist';};
-  document.getElementById("modal").classList.add("open");
+function renderPager() {
+  const total = filtered.length;
+  const pages = Math.ceil(total / PAGE);
+  const pager = document.getElementById('pager');
+  if(pages <= 1){ pager.innerHTML=''; return; }
+  let btns = `<button onclick="goPage(${page-1})" ${page===0?'disabled':''}>←</button>`;
+  const start = Math.max(0, page-2), end = Math.min(pages-1, page+2);
+  if(start > 0) btns += `<button onclick="goPage(0)">1</button>${start>1?'<span style="padding:0 4px;color:var(--muted)">…</span>':''}`;
+  for(let i=start;i<=end;i++) btns += `<button class="${i===page?'on':''}" onclick="goPage(${i})">${i+1}</button>`;
+  if(end < pages-1) btns += `${end<pages-2?'<span style="padding:0 4px;color:var(--muted)">…</span>':''}<button onclick="goPage(${pages-1})">${pages}</button>`;
+  btns += `<button onclick="goPage(${page+1})" ${page>=pages-1?'disabled':''}>→</button>`;
+  btns += `<span class="pager-info">${page*PAGE+1}–${Math.min((page+1)*PAGE,total)} sur ${total.toLocaleString()}</span>`;
+  pager.innerHTML = btns;
 }
-function closeModal(e){if(e.target===document.getElementById("modal"))document.getElementById("modal").classList.remove("open");}
+function goPage(p){ page=p; renderTable(); document.querySelector('.tscroll').scrollTop=0; }
 
-function buildNav(){
+function buildNav() {
   // Players
-  const players={};DB.forEach(c=>{if(!players[c.player])players[c.player]=0;players[c.player]++;});
-  const pnav=document.getElementById("player-nav");
-  pnav.innerHTML=`<div class="sb-item on" onclick="setPlayer('')"><div class="sb-item-l">Tous joueurs</div><span class="sb-cnt">${Object.keys(players).length}</span></div>`;
-  Object.entries(players).sort((a,b)=>b[1]-a[1]).slice(0,10).forEach(([p,n])=>{
-    pnav.innerHTML+=`<div class="sb-item${fplayer===p?' on':''}" onclick="setPlayer('${p.replace(/'/g,"\\'")}')"><div class="sb-item-l" style="font-size:12px">${p}</div><span class="sb-cnt">${n}</span></div>`;
+  const players = {};
+  DB.forEach(c=>{ if(!players[c.player]) players[c.player]={n:0,nba_id:c.nba_id}; players[c.player].n++; });
+  const pnav = document.getElementById('pnav');
+  pnav.innerHTML = `<div class="sb-item on" onclick="setPlayer('')"><div class="sb-il">Tous (${Object.keys(players).length})</div></div>`;
+  Object.entries(players).sort((a,b)=>b[1].n-a[1].n).slice(0,30).forEach(([p,d])=>{
+    pnav.innerHTML += `<div class="sb-item${fplayer===p?' on':''}" onclick="setPlayer('${p.replace(/'/g,"\\'").replace(/"/g,'\\"')}')"><div class="sb-il" style="font-size:11px">${p}</div><span class="scnt">${d.n}</span></div>`;
   });
   // Teams
-  const teams={};DB.forEach(c=>{if(!teams[c.team])teams[c.team]={n:0,c:c.tc[0]};teams[c.team].n++;});
-  const tnav=document.getElementById("team-nav");
-  tnav.innerHTML=`<div class="sb-item on" onclick="setTeam('')"><div class="sb-item-l">Toutes équipes</div><span class="sb-cnt">${Object.keys(teams).length}</span></div>`;
+  const teams = {};
+  DB.forEach(c=>{ if(!teams[c.team]) teams[c.team]={n:0,c:c.tc[0]}; teams[c.team].n++; });
+  const tnav = document.getElementById('tnav');
+  tnav.innerHTML = `<div class="sb-item on" onclick="setTeam('')"><div class="sb-il">Toutes</div><span class="scnt">${Object.keys(teams).length}</span></div>`;
   Object.entries(teams).sort((a,b)=>b[1].n-a[1].n).forEach(([t,d])=>{
-    tnav.innerHTML+=`<div class="sb-item${fteam===t?' on':''}" onclick="setTeam('${t}')"><div class="sb-item-l"><div class="sb-dot" style="background:${d.c}"></div>${t}</div><span class="sb-cnt">${d.n}</span></div>`;
+    tnav.innerHTML += `<div class="sb-item${fteam===t?' on':''}" onclick="setTeam('${t}')"><div class="sb-il"><div class="sdot" style="background:${d.c}"></div>${t}</div><span class="scnt">${d.n}</span></div>`;
   });
 }
 
-function setPlayer(p){fplayer=p;buildNav();render();}
-function setTeam(t){fteam=t;buildNav();render();}
-function setSection(s){section=s;document.querySelectorAll(".hnav-item").forEach(el=>el.classList.toggle("on",el.getAttribute("onclick").includes("'"+s+"'")));render();}
+function setPlayer(p){ fplayer=p; buildNav(); applyFilters(); }
+function setTeam(t){ fteam=t; buildNav(); applyFilters(); }
 
-document.getElementById("var-nav").addEventListener("click",e=>{
-  const item=e.target.closest(".sb-item");if(!item)return;
-  document.querySelectorAll("#var-nav .sb-item").forEach(el=>el.classList.remove("on"));
-  item.classList.add("on");fvar=item.dataset.v||"";render();
+document.getElementById('vnav').addEventListener('click', e=>{
+  const item = e.target.closest('.sb-item'); if(!item) return;
+  document.querySelectorAll('#vnav .sb-item').forEach(el=>el.classList.remove('on'));
+  item.classList.add('on'); fvar = item.dataset.v||''; applyFilters();
 });
-document.getElementById("year-pills").addEventListener("click",e=>{
-  const p=e.target.closest(".pill");if(!p)return;
-  document.querySelectorAll("#year-pills .pill").forEach(x=>x.classList.remove("on"));
-  p.classList.add("on");fy=p.dataset.y;render();buildNav();
+document.getElementById('yp').addEventListener('click', e=>{
+  const p = e.target.closest('.pill'); if(!p) return;
+  document.querySelectorAll('#yp .pill').forEach(x=>x.classList.remove('on'));
+  p.classList.add('on'); fy = p.dataset.y; applyFilters(); buildNav();
 });
-document.getElementById("type-pills").addEventListener("click",e=>{
-  const p=e.target.closest(".pill");if(!p)return;
-  document.querySelectorAll("#type-pills .pill").forEach(x=>x.classList.remove("on"));
-  p.classList.add("on");ft=p.dataset.t;render();
+document.getElementById('tp').addEventListener('click', e=>{
+  const p = e.target.closest('.pill'); if(!p) return;
+  document.querySelectorAll('#tp .pill').forEach(x=>x.classList.remove('on'));
+  p.classList.add('on'); ft = p.dataset.t; applyFilters();
 });
-document.getElementById("sort-sel").addEventListener("change",render);
-document.getElementById("q").addEventListener("input",render);
+document.querySelectorAll('.hn').forEach(el => el.addEventListener('click', ()=>{
+  document.querySelectorAll('.hn').forEach(x=>x.classList.remove('on'));
+  el.classList.add('on'); section = el.dataset.s; applyFilters();
+}));
+document.getElementById('ss').addEventListener('change', e=>{ sortCol=e.target.value; applyFilters(); });
+document.getElementById('q').addEventListener('input', applyFilters);
 
-buildNav();render();
+// Column sort
+document.querySelectorAll('thead th[data-col]').forEach(th => {
+  th.addEventListener('click', ()=>{
+    const col = th.dataset.col;
+    const map = {raw:'pd',psa9:'pa',psa10:'p10',player:'na',num:'num',chg:'chg'};
+    if(map[col]){ sortCol=map[col]; document.getElementById('ss').value=sortCol; applyFilters(); }
+  });
+});
+
+function openModal(id) {
+  const c = DB.find(x=>x.id===id);
+  document.getElementById('m-set').textContent = c.set;
+  document.getElementById('m-title').textContent = `${c.player} — ${c.var}${c.print?' '+c.print:''}`;
+  document.getElementById('m-bg').style.background = cardBg(c);
+  document.getElementById('m-foil').style.display = c.type!=='base' ? 'block' : 'none';
+  const img = document.getElementById('m-img'); img.src=CDN(c.nba_id); img.style.display='';
+  document.getElementById('m-cn').textContent = c.player.split(' ').slice(-1)[0].toUpperCase();
+  document.getElementById('m-ct').textContent = `${c.team} #${c.num}`;
+  document.getElementById('m-pl').textContent = c.player;
+  document.getElementById('m-me').innerHTML = [
+    `<span class="mpill">${c.team}</span>`,
+    `<span class="mpill">${c.set}</span>`,
+    c.type==='rc'?`<span class="mpill vb-rc">RC</span>`:'',
+    c.type==='auto'?`<span class="mpill vb-auto">AUTO</span>`:'',
+    c.print?`<span class="mpill">${c.print}</span>`:''
+  ].join('');
+  document.getElementById('g-r').textContent = c.raw != null ? fp(c.raw) : '—';
+  document.getElementById('g-8').textContent = c.psa9 != null ? fp(Math.round(c.psa9*0.65)) : '—';
+  document.getElementById('g-9').textContent = c.psa9 != null ? fp(c.psa9) : '—';
+  document.getElementById('g-10').textContent = c.psa10 != null ? fp(c.psa10) : '—';
+  document.getElementById('m-sg').innerHTML = [
+    {l:'Numéro',v:'#'+c.num},{l:'Tirage',v:c.print||'Non limité'},
+    {l:'Année',v:c.year},{l:'Volume 7j',v:c.vol>0?c.vol+' ventes':'<1'},
+    {l:'Variation 7j',v:c.chg!==0?(c.chg>0?'+':'')+c.chg+'%':'—'},
+    {l:'Grade',v:c.type.toUpperCase()}
+  ].map(s=>`<div class="msitem"><div class="ms-l">${s.l}</div><div class="ms-v">${s.v}</div></div>`).join('');
+  document.getElementById('m-eb').href = eu(c);
+  const wb = document.getElementById('m-wl');
+  wb.textContent = wl.has(id) ? '★ Watchlist' : '☆ Watchlist';
+  wb.onclick = () => { wl.has(id)?wl.delete(id):wl.add(id); wb.textContent=wl.has(id)?'★ Watchlist':'☆ Watchlist'; };
+  document.getElementById('mo').classList.add('open');
+}
+function cmo(e){ if(e.target===document.getElementById('mo')) document.getElementById('mo').classList.remove('open'); }
 </script>
 </body>
 </html>
